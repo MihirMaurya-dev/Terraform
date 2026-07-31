@@ -72,6 +72,8 @@ module "vm" {
   vm_name    = var.vm_name
   rg_name    = var.rg_name
   nic_name   = var.nic_name
+  admin_username = var.admin_username
+  admin_password = var.admin_password
 }
 
 module "loadblancer" {

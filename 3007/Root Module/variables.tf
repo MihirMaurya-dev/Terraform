@@ -10,3 +10,7 @@ variable "nat_name" {}
 variable "bastion_name" {}
 variable "vm_name" {}
 variable "lb_name" {}
+variable "admin_username" {}
+variable "admin_password" {
+  sensitive = true
+}

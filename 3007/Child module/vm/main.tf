@@ -1,3 +1,8 @@
+resource "tls_private_key" "vm_ssh" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
 data "azurerm_resource_group" "rg" {
     name = var.rg_name
 }
@@ -12,8 +17,12 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = data.azurerm_resource_group.rg.location
   size                = "Standard_DS1_v2"
   admin_username      = var.admin_username
-  admin_password      = var.admin_password
-  disable_password_authentication = false
+  disable_password_authentication = true
+
+  admin_ssh_key {
+    username   = var.admin_username
+    public_key = tls_private_key.vm_ssh.public_key_openssh
+  }
   network_interface_ids = [
     data.azurerm_network_interface.nic.id,
   ]

@@ -13,8 +13,8 @@ provider "azurerm" {
 
 # Calling the module
 module "my_infrastructure" {
-  source    = "./modules/infrastructure"
-  
+  source = "./modules/infrastructure"
+
   # Passing in our variables
   base_name = "mihir-3105"
   location  = "belgiumcentral"

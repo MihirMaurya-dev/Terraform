@@ -57,11 +57,11 @@ resource "azurerm_lb_backend_address_pool" "backend_pool" {
 
 # Health Probe (checks HTTP :80 every 15 seconds)
 resource "azurerm_lb_probe" "http_probe" {
-  name            = "http-health-probe"
-  loadbalancer_id = azurerm_lb.lb.id
-  protocol        = "Http"
-  port            = 80
-  request_path    = "/"
+  name                = "http-health-probe"
+  loadbalancer_id     = azurerm_lb.lb.id
+  protocol            = "Http"
+  port                = 80
+  request_path        = "/"
   interval_in_seconds = 15
   number_of_probes    = 2
 }

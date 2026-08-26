@@ -34,20 +34,20 @@ module "nsg" {
 }
 
 module "nic" {
-  source     = "../../modules/nic"
-  for_each   = var.vms
-  nics       = each.value.nic_name
-  
+  source   = "../../modules/nic"
+  for_each = var.vms
+  nics     = each.value.nic_name
+
   # Pass IDs directly from the other modules
-  subnet_id  = module.snet[each.key].subnet_id
-  pip_id     = module.pip[each.key].pip_id
-  nsg_id     = module.nsg[each.key].nsg_id
+  subnet_id = module.snet[each.key].subnet_id
+  pip_id    = module.pip[each.key].pip_id
+  nsg_id    = module.nsg[each.key].nsg_id
 }
 
 module "vm" {
-  source     = "../../modules/vm"
-  for_each   = var.vms
-  vms        = each.value.vm_name
-  
-  nic_id     = module.nic[each.key].nic_id
+  source   = "../../modules/vm"
+  for_each = var.vms
+  vms      = each.value.vm_name
+
+  nic_id = module.nic[each.key].nic_id
 }

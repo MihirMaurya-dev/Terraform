@@ -1,26 +1,28 @@
-name: Deploy to Azure
+name: Terraform
 
 on:
   push:
     branches:
       - main
-      - feature 
+      - feature
+  pull_request:
 
 jobs:
-  deploy:
+  terraform:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: your-app-name
-          package: .
+      - name: Terraform Format
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate

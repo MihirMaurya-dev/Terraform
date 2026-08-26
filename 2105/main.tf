@@ -5,7 +5,7 @@ terraform {
       version = "~> 4.72.0"
     }
   }
-   backend "azurerm" {
+  backend "azurerm" {
     resource_group_name  = "mihir-2105"
     storage_account_name = "st2105mihir"
     container_name       = "container2105"

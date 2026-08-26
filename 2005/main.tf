@@ -22,8 +22,8 @@ resource "azurerm_resource_group" "resource1" {
   location = "West Europe"
 }
 
-resource "azurerm_storage_account" "storage" {  
-  depends_on= [azurerm_resource_group.resource1]  
+resource "azurerm_storage_account" "storage" {
+  depends_on               = [azurerm_resource_group.resource1]
   name                     = "storageaccountname963"
   resource_group_name      = "storage-resources"
   location                 = "West Europe"

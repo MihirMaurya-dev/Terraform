@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 module "my_infrastructure" {
-  source   = "./modules/infrastructure"
+  source    = "./modules/infrastructure"
   base_name = var.base_name
   location  = var.location
 }

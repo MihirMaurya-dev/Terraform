@@ -4,19 +4,19 @@ resource "tls_private_key" "vm_ssh" {
 }
 
 data "azurerm_resource_group" "rg" {
-    name = var.rg_name
+  name = var.rg_name
 }
 data "azurerm_network_interface" "nic" {
-    name = var.nic_name
-    resource_group_name = data.azurerm_resource_group.rg.name
+  name                = var.nic_name
+  resource_group_name = data.azurerm_resource_group.rg.name
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = var.vm_name
-  resource_group_name = data.azurerm_resource_group.rg.name
-  location            = data.azurerm_resource_group.rg.location
-  size                = "Standard_DS1_v2"
-  admin_username      = var.admin_username
+  name                            = var.vm_name
+  resource_group_name             = data.azurerm_resource_group.rg.name
+  location                        = data.azurerm_resource_group.rg.location
+  size                            = "Standard_DS1_v2"
+  admin_username                  = var.admin_username
   disable_password_authentication = true
 
   admin_ssh_key {

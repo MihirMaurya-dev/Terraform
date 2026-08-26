@@ -29,7 +29,7 @@ variable "rg_set" {
 
 # A map of resource group names to locations
 variable "rg_map" {
-  type    = map(string)
+  type = map(string)
   default = {
     "rg-practice-map-1" = "eastus"
     "rg-practice-map-2" = "westus"

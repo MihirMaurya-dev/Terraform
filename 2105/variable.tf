@@ -8,7 +8,7 @@ variable "location" {
   type        = string
   description = "The Azure region where resources will be deployed"
   default     = "eastus"
-  
+
   validation {
     condition     = contains(["eastus", "eastus2", "westus", "centralus"], var.location)
     error_message = "The location must be one of: eastus, eastus2, westus, centralus."

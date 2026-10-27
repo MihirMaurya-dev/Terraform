@@ -14,6 +14,21 @@
 
 ---
 
+
+## 🧰 Technology Stack & Tooling
+
+<div align="center">
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=azure,terraform,bash,powershell,git,githubactions,linux,vscode&theme=dark&perline=8" alt="Technology Stack" />
+</a>
+
+</div>
+
+<br/>
+
+---
+
 ## 🏛️ Architectural Overview
 
 This repository represents a structured, enterprise-grade **Terraform Infrastructure as Code (IaC) Library** for Microsoft Azure. Designed around modularity, immutability, and DRY (Don't Repeat Yourself) design patterns, each blueprint encapsulates security baselines, parameter validation, and resource isolation.

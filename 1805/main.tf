@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "mihir_rg" {
 }
 
 resource "azurerm_storage_account" "mihir_sa" {
-  name                     = "mihirsa123" 
+  name                     = "mihirsa123"
   resource_group_name      = azurerm_resource_group.mihir_rg.name
   location                 = azurerm_resource_group.mihir_rg.location
   account_tier             = "Standard"

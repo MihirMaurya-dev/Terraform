@@ -19,7 +19,7 @@ variable "prefix" {
 variable "vm_size" {
   description = "Size (SKU) of the Virtual Machine"
   type        = string
-  default     = "Standard_B1s"  # 1 vCPU, 1 GB RAM — cheapest option
+  default     = "Standard_B1s" # 1 vCPU, 1 GB RAM — cheapest option
 }
 
 variable "admin_username" {
